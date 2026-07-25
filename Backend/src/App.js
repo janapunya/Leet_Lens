@@ -5,6 +5,9 @@ const cookieParser = require('cookie-parser');
 const Leetcode_Data = require('./routs/Leetcode');
 const questionRoutes = require('./routs/question');
 const executecode = require('./routs/executecode')
+
+app.set("trust proxy", 1);
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({

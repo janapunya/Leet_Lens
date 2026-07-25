@@ -69,6 +69,8 @@ async function userNameData(req,res) {
         res.cookie("user_cookie", user_cookie, {
           httpOnly: true,
           secure: true, // only HTTPS
+          sameSite: "None",
+          path: "/",
           maxAge:18000000  // 5 hours
       });
       return res.json(matchedUser);
