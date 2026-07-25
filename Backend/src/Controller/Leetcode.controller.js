@@ -69,7 +69,7 @@ async function userNameData(req,res) {
         res.cookie("user_cookie", user_cookie, {
           httpOnly: true,
           secure: true, // only HTTPS
-          sameSite: "None",
+          sameSite: "none",
           path: "/",
           maxAge:18000000  // 5 hours
       });
@@ -107,6 +107,9 @@ async function checkjwt(req,res) {
 
 async function solvedQuestion(req,res) {
   try{
+    console.log("Headers:", req.headers);
+    console.log("Cookie Header:", req.headers.cookie);
+    console.log("Cookies:", req.cookies);
     const {user_cookie} = req.cookies;
 
       const check_user = jwt.verify(user_cookie,process.env.JWT_SECRET);
