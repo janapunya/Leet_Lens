@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* hide scrollbar but allow scroll */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  @keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(120vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.animate-confetti {
+    animation-name: confettiFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
