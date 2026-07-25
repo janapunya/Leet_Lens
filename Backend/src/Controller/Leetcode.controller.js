@@ -2,6 +2,11 @@ const userDataModel = require('../models/UserData.model');
 const redis = require('../services/radis')
 const jwt = require('jsonwebtoken');
 async function userNameData(req,res) {
+  res.set({
+    "Cache-Control": "no-store",
+    "Pragma": "no-cache",
+    "Expires": "0",
+  });
     const { username } = req.params;
     try {
       const cached = await redis.get(username);
