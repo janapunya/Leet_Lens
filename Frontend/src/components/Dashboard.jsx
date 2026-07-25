@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import Pie from './pai'
+import Pie from './Pai'
 import  CustomBar  from './Bar'
 import logo1 from '../assets/image_icon/1logo.png'
 import logo2 from '../assets/image_icon/2logo.png'
